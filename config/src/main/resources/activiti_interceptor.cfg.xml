@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="processEngineConfiguration"
+      class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+    <!--MDCCommandInvoker继承了DebugCommandInvoker也会打印执行过程日志-->
+    <property name="commandInvoker" ref="commandInvoker"/>
+    <!--是否开启事件日志-->
+    <property name="enableDatabaseEventLogging" value="true"/>
+    <!--是否开启展示执行过程日志-->
+    <property name="enableVerboseExecutionTreeLogging" value="true"/>
+    <property name="customPreCommandInterceptors">
+        <list>
+          <bean class="com.imooc.activiti.interceptor.DurationCommandInterceptor"/>
+        </list>
+    </property>
+    <property name="customPostCommandInterceptors">
+        <list>
+            <bean class="com.imooc.activiti.interceptor.DurationCommandInterceptor"/>
+        </list>
+    </property>
+</bean>
+<bean id="commandInvoker" class="com.imooc.activiti.interceptor.MDCCommandInvoker"/>
+
+</beans>

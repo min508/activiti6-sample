@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="processEngineConfiguration"
+          class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+        <!--<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/activiti6unit?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false"/>
+        <property name="jdbcDriver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUsername" value="root"/>
+        <property name="jdbcPassword" value="123456"/>-->
+        <!--数据库必须是空的，不能有相关的任何表-->
+        <!--<property name="databaseSchemaUpdate" value="create-drop"/>-->
+        <!--数据库有表也能正常执行下去-->
+        <!--<property name="databaseSchemaUpdate" value="true"/>-->
+        <property name="jdbcUrl" value="jdbc:h2:mem:activiti"/>
+        <property name="jdbcDriver" value="org.h2.Driver"/>
+        <property name="jdbcUsername" value="sa"/>
+        <property name="jdbcPassword" value=""/>
+        <!--启动异步任务-->
+        <property name="asyncExecutorActivate" value="true"/>
+        <property name="customMybatisMappers">
+            <set>
+                <value>com.imooc.activiti.mapper.MyCustomMapper</value>
+            </set>
+        </property>
+    </bean>
+
+</beans>
