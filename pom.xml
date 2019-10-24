@@ -17,6 +17,7 @@
         <module>coreapi</module>
         <module>dbentity</module>
         <module>bpmn20</module>
+        <module>springboot</module>
     </modules>
     <dependencyManagement>
         <dependencies>
