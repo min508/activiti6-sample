@@ -1,4 +1,4 @@
-package com.imooc.activiti.springboot.controller;
+package com.imooc.activiti.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
