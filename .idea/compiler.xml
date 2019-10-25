@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bpmn20" />
-        <module name="dbentity" />
-        <module name="springboot" />
         <module name="coreapi" />
+        <module name="springboot" />
+        <module name="dbentity" />
         <module name="config" />
       </profile>
     </annotationProcessing>

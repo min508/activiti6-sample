@@ -7,3 +7,6 @@ management:
   endpoint:
     beans:
       enabled: false
+spring:
+  activiti:
+    history-level: full
