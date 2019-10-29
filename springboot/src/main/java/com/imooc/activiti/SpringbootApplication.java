@@ -1,10 +1,9 @@
 package com.imooc.activiti;
 
-import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@SpringBootApplication
 public class SpringbootApplication {
 
     public static void main(String[] args) {

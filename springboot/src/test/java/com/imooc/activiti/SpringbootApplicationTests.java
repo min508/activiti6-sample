@@ -1,7 +1,7 @@
 package com.imooc.activiti;
 
-import org.activiti.engine.RuntimeService;
-import org.activiti.engine.runtime.ProcessInstance;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.runtime.ProcessInstance;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

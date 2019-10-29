@@ -53,10 +53,6 @@ spring:
         url-pattern: /*
         # 忽略过滤格式
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-  activiti:
-    database-schema-update: true
-    history-level: full
-    db-history-used: true
 
 management:
   endpoints:
@@ -67,3 +63,11 @@ management:
   endpoint:
     beans:
       enabled: false
+
+flowable:
+  history-level: full
+  # 将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。
+  database-schema-update: true
+  # 关闭定时任务JOB
+  async-executor-activate: false
+  db-history-used: true
